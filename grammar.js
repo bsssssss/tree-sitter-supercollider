@@ -588,9 +588,9 @@ module.exports = grammar({
 		arithmetic_series: $ => seq(
 			"(",
 			choice(
-				seq($.number, ",", $.number, "..", $.number),
-				seq("..", $.number),
-				seq($.number, "..", $.number),
+				seq($._object, ",", $._object, "..", $._object),
+				seq("..", $._object),
+				seq($._object, "..", $._object),
 			),
 			")"
 		),
