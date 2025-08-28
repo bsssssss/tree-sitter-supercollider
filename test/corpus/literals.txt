@@ -92,11 +92,13 @@ string concat
   (code_block
     (collection
       (arithmetic_series
-        (number
-          (integer ))
-        (number
-          (number
-            (integer )))))))
+        (literal
+            (number
+              (integer )))
+        (literal
+            (number
+              (number
+                (integer ))))))))
 
 ==================
 2.0pi

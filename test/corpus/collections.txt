@@ -177,12 +177,15 @@ arithmetic series (1.0, 1.0..2.0)
   (code_block
     (collection
       (arithmetic_series
-        (number
-          (float ))
-        (number
-          (float ))
-        (number
-          (float ))))))
+        (literal
+          (number
+            (float)))
+        (literal
+          (number
+            (float)))
+        (literal
+          (number
+            (float)))))))
 
 ==================
 arithmetic series (..1)
@@ -195,8 +198,9 @@ arithmetic series (..1)
   (code_block
     (collection
       (arithmetic_series
-        (number
-          (integer ))))))
+        (literal
+            (number
+              (integer )))))))
 
 ==================
 arithmetic series (1..10)
@@ -209,10 +213,12 @@ arithmetic series (1..10)
   (code_block
     (collection
       (arithmetic_series
-        (number
-          (integer ))
-        (number
-          (integer ))))))
+        (literal 
+            (number
+              (integer )))
+        (literal
+            (number
+              (integer )))))))
 
 ==================
 Variable as index in collection

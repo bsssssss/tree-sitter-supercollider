@@ -34,10 +34,12 @@ selector as infix binary operators
       left: (binary_expression
         left: (collection
           (arithmetic_series
-            (number
-              (integer ))
-            (number
-              (integer ))))
+            (literal
+                (number
+                  (integer )))
+            (literal
+                (number
+                  (integer )))))
         operator: (method_name )
         right: (function_block
           (parameter_list
