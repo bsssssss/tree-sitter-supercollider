@@ -482,10 +482,9 @@ switch (201)
   (code_block
     (control_structure
       (switch
-        (code_block
-          (literal
-            (number
-              (integer ))))
+        (literal
+          (number
+            (integer )))
         (function_block
           (literal
             (number
@@ -555,13 +554,12 @@ x = switch (y.choose)
         (environment_var name: (identifier)))
       value: (control_structure
         (switch
-          (code_block
-            (function_call
-              (receiver
-                (variable
-                  (environment_var name: (identifier))))
-              (method_call
-                name: (method_name ))))
+          (function_call
+            (receiver
+              (variable
+                (environment_var name: (identifier))))
+            (method_call
+              name: (method_name )))
           (function_block
             (literal
               (number
