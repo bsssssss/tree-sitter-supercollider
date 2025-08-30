@@ -794,13 +794,11 @@ module.exports = grammar({
 		),
 
 		case: $ => prec.left(choice(
-            // case { test1 } { res1 } { test2 } { res2 };
             seq(
                 field("name", "case"),
                 repeat($.function_block),
                 // ";"
             ),
-            // case ({ test1 }, { res1 }, { test2 }, { res2 });
             seq(
                 field("name", "case"),
                 "(",
@@ -810,24 +808,18 @@ module.exports = grammar({
         )),
 
 		switch: $ => choice(
-			seq(
-				field("name", "switch"),
-				"(",
-				choice($.function_call, $._object),
-				",",
-				sepBy(
-					",",
-					seq($._object, ",", $.function_block)
-				),
-				",",
-				seq($._object, ",", $.function_block),
-				optional(seq(",", $.function_block)),
-				")"
-			),
+            seq(
+                field("name", "switch"),
+                "(",
+                sepBy(",", $._object),
+                // allow trailing comma
+                optional(","),
+                ")"
+            ),
 			prec.right(seq(
 				field("name", "switch"),
-				$.code_block,
-				// "(", $._object, ")",
+				// $.code_block,
+				"(", $._object, ")",
 				repeat(
 					seq(
 						choice($.function_call, $._object),
