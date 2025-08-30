@@ -793,11 +793,21 @@ module.exports = grammar({
 			)
 		),
 
-		case: $ => seq(
-			field("name", "case"),
-			repeat($.function_block),
-			";"
-		),
+		case: $ => prec.left(choice(
+            // case { test1 } { res1 } { test2 } { res2 };
+            seq(
+                field("name", "case"),
+                repeat($.function_block),
+                // ";"
+            ),
+            // case ({ test1 }, { res1 }, { test2 }, { res2 });
+            seq(
+                field("name", "case"),
+                "(",
+                sepBy(",", $._object),
+                ")"
+            )
+        )),
 
 		switch: $ => choice(
 			seq(
