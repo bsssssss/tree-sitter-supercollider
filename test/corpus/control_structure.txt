@@ -482,10 +482,9 @@ switch (201)
   (code_block
     (control_structure
       (switch
-        (code_block
-          (literal
-            (number
-              (integer ))))
+        (literal
+          (number
+            (integer )))
         (function_block
           (literal
             (number
