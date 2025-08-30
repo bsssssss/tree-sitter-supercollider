@@ -698,8 +698,8 @@ module.exports = grammar({
 					field("expression", prec.left(
 						choice($.function_call, $._object)
 					)),
-					field("true", seq(",", $.function_block)),
-					optional(field("false", seq(",", $.function_block))),
+					field("true", seq(",", $._object)),
+					optional(field("false", seq(",", $._object))),
 					")"
 				)
 			),
