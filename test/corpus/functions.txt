@@ -45,7 +45,7 @@ selector as infix binary operators
               name: (identifier )))
           (binary_expression
             left: (variable
-              (environment_var
+              (single_letter_var
                 name: (identifier )))
             right: (literal
               (number
@@ -80,7 +80,7 @@ a ? 2000;
           (builtin_var ))))
     (nil_check
       (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       (literal
         (number
@@ -267,7 +267,7 @@ unfold argument list with *
   (code_block
     (function_definition
       name: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       value: (function_block
         (parameter_list
@@ -294,7 +294,7 @@ unfold argument list with *
     (function_call
       (receiver
         (variable
-          (environment_var
+          (single_letter_var
             name: (identifier ))))
       (method_call
         name: (method_name )
@@ -320,12 +320,13 @@ arg with ...
 f = {arg ...args; };
 e = {|...args| };
 )
+
 ---
 (source_file
   (code_block
     (function_definition
       name: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       value: (function_block
         (parameter_list
@@ -333,7 +334,7 @@ e = {|...args| };
             name: (identifier )))))
     (function_definition
       name: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       value: (function_block
         (parameter_list
@@ -427,7 +428,7 @@ s.options.blockSize_(256);
     (function_call
       (receiver
         (variable
-          (environment_var
+          (single_letter_var
             name: (identifier ))))
       (method_call
         name: (method_name ))
@@ -453,7 +454,7 @@ s = Server.new;
   (code_block
     (variable_definition
       name: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       value: (function_call
         (receiver (class) )
@@ -469,7 +470,7 @@ f = {};
 (source_file
   (function_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (function_block )))
 
 ==================
@@ -482,7 +483,7 @@ f = {|oneArg=10, anotherArg=2| oneArg+anotherArg; };
 (source_file
   (function_definition
     name: (variable
-      (environment_var name: (identifier)))
+      (single_letter_var name: (identifier)))
     value: (function_block
       (parameter_list
         (argument name:
@@ -502,6 +503,7 @@ f = {|oneArg=10, anotherArg=2| oneArg+anotherArg; };
         right: (variable
           (local_var name:
             (identifier )))))))
+
 ==================
 Add two numbers in function with arg list
 ==================
@@ -512,7 +514,7 @@ f = {arg oneArg=10, anotherArg=2; oneArg+anotherArg; };
 (source_file
   (function_definition
     name: (variable
-      (environment_var name: (identifier)))
+      (single_letter_var name: (identifier)))
     value: (function_block
       (parameter_list
         (argument
@@ -751,13 +753,16 @@ Instance method (linlin on a float)
 ==================
 instance method call with function as argument
 ==================
+
 f = {|arg1|};
 f.value(arg1: { "hej".postln; });
+
 ---
+
 (source_file
   (function_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (function_block
       (parameter_list
         (argument
@@ -765,7 +770,7 @@ f.value(arg1: { "hej".postln; });
   (function_call
     (receiver
       (variable
-        (environment_var (identifier))))
+        (single_letter_var (identifier))))
     (method_call
       (method_name )
       (parameter_call_list
@@ -783,13 +788,16 @@ f.value(arg1: { "hej".postln; });
 ==================
 instance method call with collection as argument
 ==================
+
 f = {|arg1|};
 f.value(arg1: #[1,2,3]);
+
 ---
+
 (source_file
   (function_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (function_block
       (parameter_list
         (argument
@@ -797,7 +805,7 @@ f.value(arg1: #[1,2,3]);
   (function_call
     (receiver
       (variable
-        (environment_var (identifier))))
+        (single_letter_var (identifier))))
     (method_call
       (method_name )
       (parameter_call_list
@@ -818,13 +826,16 @@ f.value(arg1: #[1,2,3]);
 ==================
 instance method call with string as argument
 ==================
+
 f = {|arg1|};
 f.value(arg1: "hejhje hej");
+
 ---
+
 (source_file
   (function_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (function_block
       (parameter_list
         (argument
@@ -832,7 +843,7 @@ f.value(arg1: "hejhje hej");
   (function_call
     (receiver
       (variable
-        (environment_var (identifier))))
+        (single_letter_var (identifier))))
     (method_call
       (method_name )
       (parameter_call_list
@@ -845,13 +856,16 @@ f.value(arg1: "hejhje hej");
 ==================
 instance method call with symbol as argument
 ==================
+
 f = {|arg1|};
 f.value(arg1: \hej);
+
 ---
+
 (source_file
   (function_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (function_block
       (parameter_list
         (argument
@@ -859,7 +873,7 @@ f.value(arg1: \hej);
   (function_call
     (receiver
       (variable
-        (environment_var (identifier))))
+        (single_letter_var (identifier))))
     (method_call
       (method_name )
       (parameter_call_list
@@ -898,20 +912,23 @@ chained instance methods on literal
 ==================
 chained instance methods on env var
 ==================
+
 a = 10;
 a.pow(2).nextPowerOfThree;
+
 ---
+
 (source_file
   (variable_definition
     (variable
-      (environment_var (identifier)))
+      (single_letter_var (identifier)))
     (literal
       (number
         (integer ))))
   (function_call
     (receiver
       (variable
-        (environment_var (identifier))))
+        (single_letter_var (identifier))))
     (method_call
       (method_name )
       (parameter_call_list

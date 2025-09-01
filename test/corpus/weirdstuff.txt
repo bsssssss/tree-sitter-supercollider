@@ -121,27 +121,32 @@ Math on duplications
 ====================
 partial: [a, b, _]
 ====================
+
 (
 [a, b, _];
 )
+
 ---
+
 (source_file
   (code_block
     (collection
       (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       (partial ))))
 
 ====================
 partial: object.msg(a, _, _)
 ====================
+
 (
 object.msg(a, _, _);
 )
+
 ---
 
 (source_file
@@ -157,7 +162,7 @@ object.msg(a, _, _);
           (argument_calls
             (unnamed_argument
               (variable
-                (environment_var
+                (single_letter_var
                   name: (identifier )))))
           (argument_calls
             (unnamed_argument
@@ -169,15 +174,17 @@ object.msg(a, _, _);
 ====================
 partial: a + _
 ====================
+
 (
 a + _;
 )
+
 ---
 
 (source_file
   (code_block
     (binary_expression
       left: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       right: (partial))))
