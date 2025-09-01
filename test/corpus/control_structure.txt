@@ -80,8 +80,8 @@ if(nil.isNil, { "hello".postln });
       (if
         expression: (function_call
           (receiver
-            (variable
-              (builtin_var )))
+            (literal
+              (builtin_constant)))
           (method_call
             name: (method_name )))
         true: (function_block

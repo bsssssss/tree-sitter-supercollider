@@ -295,8 +295,11 @@ module.exports = grammar({
 			$.char,
 			$.string,
 			$.bool,
+            $.builtin_constant
 			// $.pi_statement
 		),
+
+        builtin_constant: $ => choice("nil", "inf"),
 
 		// pi_statement: $ => seq(optional($.number), "pi"),
 		number: $ => choice(
@@ -357,8 +360,6 @@ module.exports = grammar({
 			$.instance_var
 		),
 		builtin_var: $ => field("name", choice(
-			"inf",
-			"nil",
 			"thisFunction",
 			"thisFunctionDef",
 			"thisMethod",

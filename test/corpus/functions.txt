@@ -67,8 +67,8 @@ a ? 2000;
 (source_file
   (code_block
     (nil_check
-      (variable
-        (builtin_var ))
+      (literal
+        (builtin_constant))
       (literal
         (string )))
     (nil_check
@@ -76,8 +76,8 @@ a ? 2000;
         (number
           (integer )))
       (function_block
-        (variable
-          (builtin_var ))))
+        (literal
+          (builtin_constant))))
     (nil_check
       (variable
         (environment_var
