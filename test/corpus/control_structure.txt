@@ -554,13 +554,12 @@ x = switch (y.choose)
         (single_letter_var name: (identifier)))
       value: (control_structure
         (switch
-          (code_block
-            (function_call
-              (receiver
-                (variable
-                  (single_letter_var name: (identifier))))
-              (method_call
-                name: (method_name ))))
+          (function_call
+            (receiver
+              (variable
+                (single_letter_var name: (identifier))))
+            (method_call
+              name: (method_name )))
           (function_block
             (literal
               (number
