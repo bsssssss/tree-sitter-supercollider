@@ -350,6 +350,7 @@ module.exports = grammar({
 
 		variable: $ => choice(
 			$.environment_var,
+            $.single_letter_var,
 			$.local_var,
 			$.classvar,
 			// $.const, // Only works in classes?
@@ -369,19 +370,19 @@ module.exports = grammar({
 		)),
 
 		local_var: $ => prec(PRECEDENCE.localvar, choice(
-			field("name", $.identifier), seq( 'var',  field("name", $.identifier)))
+			field("name", $.identifier), seq('var',  field("name", $.identifier)))
 		),
 
 		instance_var: $=> seq( optional('var'), optional(choice("<", ">", "<>")), field("name", $.identifier)),
 		classvar: $ => seq('classvar', optional(choice("<", ">", "<>")), field("name", $.identifier)),
 		const: $ => seq('const', optional(choice("<", ">", "<>")), field("name", $.identifier)),
 
-		environment_var: $ => choice(
-			field("name", alias(/[a-z]/, $.identifier)),
-			field("name", alias(seq('~', $.identifier), $.identifier)),
-		),
+		environment_var: $ => field("name", alias(seq('~', $.identifier), $.identifier)),
 
-		variable_name: $ => $.identifier,
+        single_letter_var: $ => field("name", alias(/[a-z]/, $.identifier)),
+
+        // This is unused
+		// variable_name: $ => $.identifier,
 
 		variable_definition_sequence: $ => prec(PRECEDENCE.vardef_sequence,
 			seq(
