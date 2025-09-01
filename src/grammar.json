@@ -722,17 +722,13 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "..."
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "argument"
-                    }
-                  ]
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "variable_argument"
+                  },
+                  "named": true,
+                  "value": "argument"
                 },
                 {
                   "type": "BLANK"
@@ -766,17 +762,13 @@
                           "name": "argument"
                         },
                         {
-                          "type": "SEQ",
-                          "members": [
-                            {
-                              "type": "STRING",
-                              "value": "..."
-                            },
-                            {
-                              "type": "SYMBOL",
-                              "name": "argument"
-                            }
-                          ]
+                          "type": "ALIAS",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "variable_argument"
+                          },
+                          "named": true,
+                          "value": "argument"
                         }
                       ]
                     },
@@ -806,17 +798,13 @@
                                 "name": "argument"
                               },
                               {
-                                "type": "SEQ",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "..."
-                                  },
-                                  {
-                                    "type": "SYMBOL",
-                                    "name": "argument"
-                                  }
-                                ]
+                                "type": "ALIAS",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "variable_argument"
+                                },
+                                "named": true,
+                                "value": "argument"
                               }
                             ]
                           }
@@ -894,6 +882,23 @@
                 "type": "BLANK"
               }
             ]
+          }
+        }
+      ]
+    },
+    "variable_argument": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "..."
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
           }
         }
       ]
