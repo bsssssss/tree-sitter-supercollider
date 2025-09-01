@@ -18,14 +18,6 @@
         "required": false,
         "types": [
           {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
             "type": "=",
             "named": false
           },
@@ -73,7 +65,63 @@
       "required": true,
       "types": [
         {
-          "type": "number",
+          "type": "association",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "class",
+          "named": true
+        },
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
+          "type": "function_block",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "indexed_collection",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "nil_check",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -411,6 +459,11 @@
     "fields": {}
   },
   {
+    "type": "builtin_constant",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "builtin_var",
     "named": true,
     "fields": {
@@ -423,11 +476,11 @@
             "named": false
           },
           {
-            "type": "inf",
+            "type": "super",
             "named": false
           },
           {
-            "type": "nil",
+            "type": "this",
             "named": false
           },
           {
@@ -478,7 +531,63 @@
       "required": false,
       "types": [
         {
+          "type": "association",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "class",
+          "named": true
+        },
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "indexed_collection",
+          "named": true
+        },
+        {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "nil_check",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -1282,7 +1391,63 @@
             "named": false
           },
           {
+            "type": "association",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "class",
+            "named": true
+          },
+          {
+            "type": "code_block",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "control_structure",
+            "named": true
+          },
+          {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "indexed_collection",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "nil_check",
+            "named": true
+          },
+          {
+            "type": "partial",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -1310,7 +1475,63 @@
             "named": false
           },
           {
+            "type": "association",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "class",
+            "named": true
+          },
+          {
+            "type": "code_block",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "control_structure",
+            "named": true
+          },
+          {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "indexed_collection",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "nil_check",
+            "named": true
+          },
+          {
+            "type": "partial",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -1484,6 +1705,10 @@
       "types": [
         {
           "type": "bool",
+          "named": true
+        },
+        {
+          "type": "builtin_constant",
           "named": true
         },
         {
@@ -2000,6 +2225,22 @@
     }
   },
   {
+    "type": "single_letter_var",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -2123,7 +2364,7 @@
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "association",
@@ -2394,6 +2635,10 @@
         },
         {
           "type": "local_var",
+          "named": true
+        },
+        {
+          "type": "single_letter_var",
           "named": true
         }
       ]
@@ -2888,7 +3133,15 @@
     "named": true
   },
   {
+    "type": "super",
+    "named": false
+  },
+  {
     "type": "switch",
+    "named": false
+  },
+  {
+    "type": "this",
     "named": false
   },
   {
