@@ -30,6 +30,10 @@
             "named": false
           },
           {
+            "type": "code_block",
+            "named": true
+          },
+          {
             "type": "collection",
             "named": true
           },
@@ -105,6 +109,10 @@
         },
         {
           "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
           "named": true
         },
         {
@@ -195,6 +203,10 @@
           },
           {
             "type": "control_structure",
+            "named": true
+          },
+          {
+            "type": "duplicated_statement",
             "named": true
           },
           {
@@ -351,6 +363,10 @@
           },
           {
             "type": "control_structure",
+            "named": true
+          },
+          {
+            "type": "duplicated_statement",
             "named": true
           },
           {
@@ -515,6 +531,10 @@
         },
         {
           "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
           "named": true
         },
         {
@@ -712,6 +732,10 @@
           "named": true
         },
         {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
           "named": true
         },
@@ -839,6 +863,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -898,6 +926,10 @@
           },
           {
             "type": "control_structure",
+            "named": true
+          },
+          {
+            "type": "duplicated_statement",
             "named": true
           },
           {
@@ -1204,6 +1236,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -1394,6 +1430,10 @@
           "named": true
         },
         {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
           "named": true
         },
@@ -1431,6 +1471,7 @@
   {
     "type": "line_comment",
     "named": true,
+    "extra": true,
     "fields": {}
   },
   {
@@ -1627,6 +1668,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -1700,6 +1745,10 @@
         },
         {
           "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
           "named": true
         },
         {
@@ -1841,6 +1890,10 @@
           "named": true
         },
         {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
           "named": true
         },
@@ -1908,6 +1961,10 @@
           "named": true
         },
         {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
           "named": true
         },
@@ -1945,6 +2002,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -2092,6 +2150,10 @@
           "named": true
         },
         {
+          "type": "duplicated_statement",
+          "named": true
+        },
+        {
           "type": "function_block",
           "named": true
         },
@@ -2196,6 +2258,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -2261,6 +2327,10 @@
         },
         {
           "type": "control_structure",
+          "named": true
+        },
+        {
+          "type": "duplicated_statement",
           "named": true
         },
         {
@@ -2372,6 +2442,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -2469,6 +2543,10 @@
             "named": true
           },
           {
+            "type": "duplicated_statement",
+            "named": true
+          },
+          {
             "type": "function_block",
             "named": true
           },
@@ -2527,10 +2605,6 @@
         ]
       }
     }
-  },
-  {
-    "type": " ",
-    "named": false
   },
   {
     "type": "!",
@@ -2697,138 +2771,6 @@
     "named": false
   },
   {
-    "type": "Array",
-    "named": false
-  },
-  {
-    "type": "Array2D",
-    "named": false
-  },
-  {
-    "type": "ArrayedCollection",
-    "named": false
-  },
-  {
-    "type": "Bag",
-    "named": false
-  },
-  {
-    "type": "Dictionary",
-    "named": false
-  },
-  {
-    "type": "DoubleArray",
-    "named": false
-  },
-  {
-    "type": "Environment",
-    "named": false
-  },
-  {
-    "type": "Event",
-    "named": false
-  },
-  {
-    "type": "FloatArray",
-    "named": false
-  },
-  {
-    "type": "IdentityBag",
-    "named": false
-  },
-  {
-    "type": "IdentityDictionary",
-    "named": false
-  },
-  {
-    "type": "IdentitySet",
-    "named": false
-  },
-  {
-    "type": "Int16Array",
-    "named": false
-  },
-  {
-    "type": "Int32Array",
-    "named": false
-  },
-  {
-    "type": "Int8Array",
-    "named": false
-  },
-  {
-    "type": "LazyEnvir",
-    "named": false
-  },
-  {
-    "type": "LinkedList",
-    "named": false
-  },
-  {
-    "type": "List",
-    "named": false
-  },
-  {
-    "type": "MultiLevelIdentityDictionary",
-    "named": false
-  },
-  {
-    "type": "ObjectTable",
-    "named": false
-  },
-  {
-    "type": "Order",
-    "named": false
-  },
-  {
-    "type": "OrderedIdentitySet",
-    "named": false
-  },
-  {
-    "type": "Pair",
-    "named": false
-  },
-  {
-    "type": "PriorityQueue",
-    "named": false
-  },
-  {
-    "type": "RawArray",
-    "named": false
-  },
-  {
-    "type": "SequenceableCollection",
-    "named": false
-  },
-  {
-    "type": "Set",
-    "named": false
-  },
-  {
-    "type": "Signal",
-    "named": false
-  },
-  {
-    "type": "SortedList",
-    "named": false
-  },
-  {
-    "type": "SparseArray",
-    "named": false
-  },
-  {
-    "type": "String",
-    "named": false
-  },
-  {
-    "type": "SymbolArray",
-    "named": false
-  },
-  {
-    "type": "TwoWayIdentityDictionary",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
@@ -2854,7 +2796,8 @@
   },
   {
     "type": "block_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "case",
