@@ -50,8 +50,8 @@ if(a.isKindOf(Stream) && a.class == Routine, {}, {});
                 left: (function_call
                   (receiver
                     (variable
-                      (environment_var
-                        name: (identifier ))))
+                      (single_letter_var
+                        name: (identifier))))
                   (method_call
                     name: (method_name )
                     (parameter_call_list
@@ -59,8 +59,8 @@ if(a.isKindOf(Stream) && a.class == Routine, {}, {});
                         (unnamed_argument
                           (class ))))))
                 right: (variable
-                  (environment_var
-                    name: (identifier )))))
+                  (single_letter_var
+                    name: (identifier)))))
             (method_call
               name: (method_name )))
           right: (class ))
@@ -317,7 +317,7 @@ for(1,10,{|i| i.postln});
         (function_call
           (receiver
             (variable
-              (environment_var name: (identifier))))
+              (single_letter_var name: (identifier))))
           (method_call
             name: (method_name )))))))
 
@@ -338,7 +338,7 @@ start.for(end, func)
         (function_call
           (receiver
             (variable
-              (environment_var name: (identifier))))
+              (single_letter_var name: (identifier))))
           (method_call
             name: (method_name )))))))
 
@@ -360,7 +360,7 @@ start.forBy(end, step, func)
         (function_call
           (receiver
             (variable
-              (environment_var name: (identifier))))
+              (single_letter_var name: (identifier))))
           (method_call
             name: (method_name )))))))
 
@@ -382,7 +382,7 @@ forBy(start, end, step, func)
         (function_call
           (receiver
             (variable
-              (environment_var name: (identifier))))
+              (single_letter_var name: (identifier))))
           (method_call
             name: (method_name )))))))
 
@@ -400,13 +400,13 @@ x = case
   (code_block
     (variable_definition name:
       (variable
-        (environment_var name: (identifier)))
+        (single_letter_var name: (identifier)))
       value: (control_structure
         (case
           (function_block
             (binary_expression
               left: (variable
-                (environment_var name: (identifier)))
+                (single_letter_var name: (identifier)))
               right: (literal
                 (number
                   (float )))))
@@ -424,7 +424,7 @@ x = case
           (function_block
             (binary_expression
               left: (variable
-                (environment_var name: (identifier)))
+                (single_letter_var name: (identifier)))
               right: (literal
                 (number
                   (integer )))))
@@ -536,7 +536,7 @@ x = switch (y.choose)
   (code_block
     (variable_definition name:
       (variable
-        (environment_var name: (identifier)))
+        (single_letter_var name: (identifier)))
       value: (collection
         (literal
           (number
@@ -552,14 +552,14 @@ x = switch (y.choose)
             (integer )))))
     (variable_definition name:
       (variable
-        (environment_var name: (identifier)))
+        (single_letter_var name: (identifier)))
       value: (control_structure
         (switch
           (code_block
             (function_call
               (receiver
                 (variable
-                  (environment_var name: (identifier))))
+                  (single_letter_var name: (identifier))))
               (method_call
                 name: (method_name ))))
           (function_block

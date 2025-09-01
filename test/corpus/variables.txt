@@ -90,27 +90,32 @@ var v1, v2, v3=1000, v4=\yo;
 ==================
 class alias in environment var
 ==================
+
 (
 s = Server;
 )
+
 ---
+
 (source_file
   (code_block
     (variable_definition
       name: (variable
-        (environment_var
+        (single_letter_var
           name: (identifier )))
       value: (class ))))
 
 ==================
 variable types
 ==================
+
 var localvar = 1;
 a = 2;
 ~envvar = 3;
 classvar classy = 4;
 
 ---
+
 (source_file
   (variable_definition
     name: (variable
@@ -121,7 +126,7 @@ classvar classy = 4;
         (integer ))))
   (variable_definition
     name: (variable
-      (environment_var
+      (single_letter_var
         name: (identifier )))
     value: (literal
       (number
