@@ -24,7 +24,7 @@
 
 ; For function calls
 (named_argument
-  name: (identifier) @property)
+  name: (identifier) @variable.parameter)
 
 ; Methods
 (method_call
