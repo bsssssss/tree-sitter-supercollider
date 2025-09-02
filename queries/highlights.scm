@@ -19,10 +19,6 @@
 (builtin_var) @constant.builtin
 
 ; Functions
-(function_definition
-  name: (variable) @function)
-
-; For function calls
 (named_argument
   name: (identifier) @variable.parameter)
 
