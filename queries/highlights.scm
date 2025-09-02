@@ -7,7 +7,7 @@
 
 ; Argument definition
 (argument 
-  name: (identifier) @parameter)
+  name: (identifier) @variable.parameter)
 
 ; Variables
 (local_var 
