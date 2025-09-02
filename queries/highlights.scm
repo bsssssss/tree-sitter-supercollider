@@ -40,11 +40,12 @@
 (class_method_name) @function.method
 
 ; Literals
+(bool) @boolean
 (number) @number
 (float) @float
-
 (string) @string
-(symbol) @string.special
+(escape_sequence) @string.escape
+(symbol) @string.special.symbol
 
 ; Operators
 [
@@ -90,8 +91,6 @@
 
 ; control structure
 (control_structure) @conditional
-
-(escape_sequence) @string.special
 
 ; SinOsc.ar()!2
 (duplicated_statement) @repeat
