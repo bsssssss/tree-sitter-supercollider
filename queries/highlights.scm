@@ -1,9 +1,9 @@
 ; highlights.scm
 ; See this for full list: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
 
-; comments
-(line_comment) @comment
-(block_comment) @comment
+; Comments
+(line_comment) @comment @spell
+(block_comment) @comment @spell
 
 ; Argument definition
 (argument 
