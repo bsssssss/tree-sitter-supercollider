@@ -18,8 +18,6 @@
 
 (builtin_var) @constant.builtin
 
-; (variable) @variable
-
 ; Functions
 (function_definition
   name: (variable) @function)
