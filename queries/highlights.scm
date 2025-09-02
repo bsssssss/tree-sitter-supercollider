@@ -34,6 +34,7 @@
 
 ; Classes
 (class) @type
+(parent_class) @type
 
 ; Literals
 (number) @number
