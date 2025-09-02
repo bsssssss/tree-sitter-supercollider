@@ -28,7 +28,9 @@
 
 ; Methods
 (method_call
-  name: (method_name) @method)
+  name: (method_name) @function.method.call)
+
+(method_name) @function.method.call
 
 ; Classes
 (class) @type
