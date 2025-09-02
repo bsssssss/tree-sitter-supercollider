@@ -9,6 +9,9 @@
 (argument 
   name: (identifier) @variable.parameter)
 
+; Variable argument
+[ "..." ] @variable.parameter
+
 ; Variables
 (local_var 
   name: (identifier) @variable)
@@ -59,6 +62,9 @@
 [ "for" "forBy" ] @keyword.repeat
 ; SinOsc.ar()!2
 (duplicated_statement) @keyword.repeat
+
+; Arithmetic series 
+[ ".." ] @operator
 
 ; Operators
 [
