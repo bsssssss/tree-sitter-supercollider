@@ -60,10 +60,11 @@
 
 ; Iterations
 [ "for" "forBy" ] @keyword.repeat
-; SinOsc.ar()!2
-(duplicated_statement) @keyword.repeat
 
-; Arithmetic series 
+; Duplication operator
+[ "!" ] @keyword.repeat
+
+; Arithmetic series operator
 [ ".." ] @operator
 
 ; Operators
