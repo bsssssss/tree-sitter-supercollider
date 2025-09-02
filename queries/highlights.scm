@@ -47,6 +47,23 @@
 (escape_sequence) @string.escape
 (symbol) @string.special.symbol
 
+; Conditionals
+[
+  "if"
+  "while"
+  "case"
+  "switch"
+  "?"
+  "!?"
+  "??"
+]
+@keyword.conditional
+
+; Iterations
+[ "for" "forBy" ] @keyword.repeat
+; SinOsc.ar()!2
+(duplicated_statement) @keyword.repeat
+
 ; Operators
 [
   "&&"
@@ -88,9 +105,3 @@
 
 ; Delimeters
 [ ";" "." "," ] @punctuation.delimiter
-
-; control structure
-(control_structure) @conditional
-
-; SinOsc.ar()!2
-(duplicated_statement) @repeat
