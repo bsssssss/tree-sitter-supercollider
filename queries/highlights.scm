@@ -36,6 +36,9 @@
 (class) @type
 (parent_class) @type
 
+(instance_method_name) @function.method
+(class_method_name) @function.method
+
 ; Literals
 (number) @number
 ;(pi_statement) @constant.builtin
