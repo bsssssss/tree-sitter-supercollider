@@ -6,11 +6,16 @@
 (block_comment) @comment
 
 ; Argument definition
-(argument name: (identifier) @parameter)
+(argument 
+  name: (identifier) @parameter)
 
 ; Variables
-(local_var name: (identifier) @variable)
-(environment_var name:(identifier) @variable.builtin)
+(local_var 
+  name: (identifier) @variable)
+
+(environment_var 
+  name:(identifier) @variable.builtin)
+
 (builtin_var) @constant.builtin
 
 ; (variable) @variable
@@ -25,7 +30,7 @@
 
 ; Methods
 (method_call
-        name: (method_name) @method)
+  name: (method_name) @method)
 
 ; Classes
 (class) @type
@@ -40,57 +45,45 @@
 
 ; Operators
 [
-"&&"
-"||"
-"&"
-"|"
-"^"
-"=="
-"!="
-"<"
-"<="
-">"
-">="
-"<<"
-">>"
-"+"
-"-"
-"*"
-"/"
-"%"
-"="
-"|@|"
-"@@"
-"@|@"
+  "&&"
+  "||"
+  "&"
+  "|"
+  "^"
+  "=="
+  "!="
+  "<"
+  "<="
+  ">"
+  ">="
+  "<<"
+  ">>"
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "="
+  "|@|"
+  "@@"
+  "@|@"
 ] @operator
 
 ; Keywords
 [
-"arg"
-"classvar"
-"const"
-; "super"
-; "this"
-"var"
+  "arg"
+  "classvar"
+  "const"
+  ; "super"
+  ; "this"
+  "var"
 ] @keyword
 
 ; Brackets
-[
-  "("
-  ")"
-  "["
-  "]"
-  "{"
-  "}"
-  "|"
-] @punctuation.bracket
+[ "(" ")" "[" "]" "{" "}" "|" ] @punctuation.bracket
 
 ; Delimeters
-[
-  ";"
-  "."
-  ","
-] @punctuation.delimiter
+[ ";" "." "," ] @punctuation.delimiter
 
 ; control structure
 (control_structure) @conditional
