@@ -41,7 +41,6 @@
 
 ; Literals
 (number) @number
-;(pi_statement) @constant.builtin
 (float) @float
 
 (string) @string
