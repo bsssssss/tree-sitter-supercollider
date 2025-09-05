@@ -31,6 +31,10 @@
 
 (method_name) @function.method.call
 
+; Collections
+(associative_item
+  (identifier) @variable.parameter)
+
 ; Classes
 (class) @type
 (parent_class) @type
