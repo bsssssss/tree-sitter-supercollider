@@ -559,26 +559,28 @@ module.exports = grammar({
 			$._index
 		),
 
-		_index: $ => choice(seq("[",
-			field("index",
-				choice(
-					$.literal,
-					$.variable,
-					// Subrange
-					choice(
-						seq($.integer, ".."),
-						seq("..", $.integer),
-						seq($.integer, "..", $.integer),
-					)
-				)),
-			"]"
-		),
+		_index: $ => choice(
+            seq("[",
+                field("index",
+                    choice(
+                        $.number,
+                        $.variable,
+                        // Subrange
+                        choice(
+                            seq($.number, ".."),
+                            seq("..", $.number),
+                            seq($.number, "..", $.number),
+                            seq($.number, ",", $.number, "..", $.number),
+                        ),
+                    )),
+                "]"
+            ),
 			// clipAt
-			seq("|@|", field("index", $.integer)),
+			seq("|@|", field("index", $.number)),
 			// wrapAt
-			seq("@@", field("index", $.integer)),
+			seq("@@", field("index", $.number)),
 			// foldAt
-			seq("@|@", field("index", $.integer)),
+			seq("@|@", field("index", $.number)),
 		),
 
 		arithmetic_series: $ => seq(
