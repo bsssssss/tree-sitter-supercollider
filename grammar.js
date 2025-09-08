@@ -118,10 +118,16 @@ module.exports = grammar({
 
         list_comprehension_expression: $ => seq(
             optional(alias($.identifier, $.method_name)),
-            "{:",
+            "{", ":",
             sepBy(",", $._object),
             "}"
         ),
+
+        // generator_clause: $ => seq(
+        //     field("name", $.identifier),
+        //     "<-",
+        //     field("expression", $._object)
+        // ),
 
 		/////////////////
 		//  Functions  //
@@ -627,7 +633,10 @@ module.exports = grammar({
 				[PRECEDENCE.assign, '='],
 
 				// String concatenation
-				[PRECEDENCE.stringConcat, "+/+"]
+				[PRECEDENCE.stringConcat, "+/+"],
+
+                // Generator clause
+                [1, "<-"],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
@@ -644,6 +653,9 @@ module.exports = grammar({
 				// Example of this in usage to create a routine:
 				// (:1..)
 				[PRECEDENCE.unary, ':'],
+
+                // Side-effect clause in list comprehensions
+				[PRECEDENCE.unary, '::'],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
