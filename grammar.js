@@ -632,6 +632,8 @@ module.exports = grammar({
 
 				// Indexing (see https://doc.sccode.org/Overviews/SymbolicNotations.html#SequenceableCollection%20operators)
 				[PRECEDENCE.indexing, choice("@", "@@", "|@|", "@|@")],
+				// Generator clause
+				[1, "<-"],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
@@ -648,6 +650,9 @@ module.exports = grammar({
 				// Example of this in usage to create a routine:
 				// (:1..)
 				[PRECEDENCE.unary, ':'],
+
+				// Side-effect clause in list comprehensions
+				[PRECEDENCE.unary, '::'],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
