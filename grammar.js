@@ -106,6 +106,7 @@ module.exports = grammar({
 			$.indexed_collection,
 			$.partial,
 			$.duplicated_statement,
+			$.list_comprehension_expression
 		),
 
 		partial: $ => prec.right(PRECEDENCE.partial, "_"),
@@ -115,6 +116,13 @@ module.exports = grammar({
 			field("operator","!"),
 			field("duplication_times", $._object)
 		)),
+
+		list_comprehension_expression: $ => seq(
+			optional(alias($.identifier, $.method_name)),
+			"{:",
+			sepBy(",", $._object),
+			"}"
+		),
 
 		/////////////////
 		//	Functions  //
