@@ -119,15 +119,11 @@ module.exports = grammar({
         list_comprehension_expression: $ => seq(
             optional(alias($.identifier, $.method_name)),
             "{", ":",
-            sepBy(",", $._object),
+            field("body", choice($.variable, $.collection)),
+            ",",
+            sepBy(",", field("qualifier", $._object)),
             "}"
         ),
-
-        // generator_clause: $ => seq(
-        //     field("name", $.identifier),
-        //     "<-",
-        //     field("expression", $._object)
-        // ),
 
 		/////////////////
 		//  Functions  //
@@ -635,6 +631,9 @@ module.exports = grammar({
 				// String concatenation
 				[PRECEDENCE.stringConcat, "+/+"],
 
+                // Indexing (see https://doc.sccode.org/Overviews/SymbolicNotations.html#SequenceableCollection%20operators)
+                [PRECEDENCE.indexing, choice("@", "@@", "|@|", "@|@")],
+
                 // Generator clause
                 [1, "<-"],
 			];
@@ -656,6 +655,7 @@ module.exports = grammar({
 
                 // Side-effect clause in list comprehensions
 				[PRECEDENCE.unary, '::'],
+				[PRECEDENCE.unary, ':while'],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
