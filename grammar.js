@@ -653,6 +653,7 @@ module.exports = grammar({
 
 				// Side-effect clause in list comprehensions
 				[PRECEDENCE.unary, '::'],
+				[PRECEDENCE.unary, ':while'],
 			];
 
 			return choice(...table.map(([precedence, operator]) => prec.left(precedence, seq(
