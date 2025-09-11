@@ -10,7 +10,6 @@ Ref'd array
 (source_file
   (code_block
     (collection
-      (ref )
       (literal
         (number
           (integer )))

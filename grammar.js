@@ -460,14 +460,13 @@ module.exports = grammar({
 		//	Collections  //
 		///////////////////
 
-		ref: $ => "`",
 		collection: $ => prec.left(seq(
 			// Optional class prefix
 			// The actual collection
 			choice(
 				$.arithmetic_series,
 				prec.left(seq(
-					optional(choice("#", $.ref)),
+					optional(choice("#", "`")),
 					optional(
 						choice(
 							optional(

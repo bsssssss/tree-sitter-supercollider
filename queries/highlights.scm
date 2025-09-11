@@ -110,7 +110,7 @@
 ] @keyword
 
 ; Brackets
-[ "(" ")" "[" "]" "{" "}" "|" ] @punctuation.bracket
+[ "(" ")" "[" "]" "{" "}" "|" "#" "`" ] @punctuation.bracket
 
 ; Delimeters
 [ ";" "." "," ] @punctuation.delimiter
