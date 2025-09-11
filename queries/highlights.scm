@@ -50,6 +50,9 @@
 (escape_sequence) @string.escape
 (symbol) @string.special.symbol
 
+; Builtin
+(builtin_constant) @constant.builtin
+
 ; Conditionals
 [
   "if"
