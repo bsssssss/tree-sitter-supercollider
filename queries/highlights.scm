@@ -19,7 +19,7 @@
 (environment_var 
   name:(identifier) @variable.builtin)
 
-(builtin_var) @constant.builtin
+(builtin_var) @variable.builtin
 
 ; Functions
 (named_argument
@@ -104,8 +104,6 @@
   "arg"
   "classvar"
   "const"
-  ; "super"
-  ; "this"
   "var"
 ] @keyword
 
