@@ -9,6 +9,7 @@ YoYO{
   (class_def
     (class )
     (const
+      (getter_setter_symbols)
       name: (identifier ))
     (literal
       (number
@@ -26,12 +27,15 @@ var <yo;
 (source_file
   (variable
     (instance_var
+      (getter_setter_symbols)
       name: (identifier )))
   (variable
     (instance_var
+      (getter_setter_symbols)
       name: (identifier )))
   (variable
     (instance_var
+      (getter_setter_symbols)
       name: (identifier ))))
 
 ====================
@@ -46,12 +50,15 @@ classvar <yo;
 (source_file
   (variable
     (classvar
+      (getter_setter_symbols)
       name: (identifier )))
   (variable
     (classvar
+      (getter_setter_symbols)
       name: (identifier )))
   (variable
     (classvar
+      (getter_setter_symbols)
       name: (identifier ))))
 
 ==================
