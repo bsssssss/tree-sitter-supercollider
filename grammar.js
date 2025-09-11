@@ -369,12 +369,14 @@ module.exports = grammar({
 		)),
 
 		local_var: $ => prec(PRECEDENCE.localvar, choice(
-			field("name", $.identifier), seq( 'var',  field("name", $.identifier)))
+			field("name", $.identifier), seq('var', field("name", $.identifier)))
 		),
 
-		instance_var: $=> seq( optional('var'), optional(choice("<", ">", "<>")), field("name", $.identifier)),
-		classvar: $ => seq('classvar', optional(choice("<", ">", "<>")), field("name", $.identifier)),
-		const: $ => seq('const', optional(choice("<", ">", "<>")), field("name", $.identifier)),
+        getter_setter_symbols: $ => choice("<", ">", "<>"),
+
+		instance_var: $ => seq(optional('var'), optional($.getter_setter_symbols), field("name", $.identifier)),
+		classvar: $ => seq('classvar', optional($.getter_setter_symbols), field("name", $.identifier)),
+		const: $ => seq('const', optional($.getter_setter_symbols), field("name", $.identifier)),
 
 		environment_var: $ => choice(
 			field("name", alias(/[a-z]/, $.identifier)),

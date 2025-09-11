@@ -42,6 +42,10 @@
 (instance_method_name) @function.method
 (class_method_name) @function.method
 
+(instance_var
+  name: (identifier)) @variable
+(getter_setter_symbols) @operator
+
 ; Literals
 (bool) @boolean
 (number) @number
