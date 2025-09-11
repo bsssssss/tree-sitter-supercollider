@@ -19,6 +19,9 @@
 (environment_var 
   name:(identifier) @variable.builtin)
 
+(single_letter_var 
+  name:(identifier) @variable)
+
 (builtin_var) @constant.builtin
 
 ; Functions
