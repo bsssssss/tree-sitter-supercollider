@@ -372,7 +372,7 @@ module.exports = grammar({
 			field("name", $.identifier), seq('var', field("name", $.identifier)))
 		),
 
-        getter_setter_symbols: $ => choice("<", ">", "<>"),
+		getter_setter_symbols: $ => choice("<", ">", "<>"),
 
 		instance_var: $ => seq(optional('var'), optional($.getter_setter_symbols), field("name", $.identifier)),
 		classvar: $ => seq('classvar', optional($.getter_setter_symbols), field("name", $.identifier)),
