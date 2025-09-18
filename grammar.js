@@ -366,8 +366,8 @@ module.exports = grammar({
 			"thisThread",
 			"currentEnvironment",
 			"topEnvironment",
-            "this",
-            "super"
+			"this",
+			"super"
 		)),
 
 		local_var: $ => prec(PRECEDENCE.localvar, choice(
