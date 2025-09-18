@@ -295,11 +295,11 @@ module.exports = grammar({
 			$.char,
 			$.string,
 			$.bool,
-            $.builtin_constant
+			$.builtin_constant
 			// $.pi_statement
 		),
 
-        builtin_constant: $ => choice("nil", "inf"),
+		builtin_constant: $ => choice("nil", "inf"),
 
 		// pi_statement: $ => seq(optional($.number), "pi"),
 		number: $ => choice(
