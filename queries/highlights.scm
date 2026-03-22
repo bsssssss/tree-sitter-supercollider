@@ -1,81 +1,126 @@
 ; highlights.scm
 ; See this for full list: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
+; Comments
+(line_comment) @comment @spell
 
-; comments
-(line_comment) @comment
-(block_comment) @comment
+(block_comment) @comment @spell
 
 ; Argument definition
-(argument name: (identifier) @parameter) 
+(argument
+  name: (identifier) @variable.parameter)
+
+"..." @variable.parameter ; variable argument
+
+; For function calls
+(named_argument
+  name: (identifier) @variable.parameter)
 
 ; Variables
-(local_var name: (identifier) @variable)
-(environment_var name:(identifier) @variable.builtin)
-(builtin_var) @constant.builtin
+(local_var
+  name: (identifier) @variable)
 
-; (variable) @variable
+(environment_var
+  name: (identifier) @variable.builtin)
+
+(builtin_var) @constant.builtin
 
 ; Functions
 (function_definition
   name: (variable) @function)
 
-; For function calls
-(named_argument 
-  name: (identifier) @property) 
-
 ; Methods
-(instance_method_call 
-        name: (method_name) @function)
-(class_method_call 
-        name: (class_method_name) @method)
+(function_call
+  name: (_) @function.method.call)
+
+; Collections
+(associative_item
+  (identifier) @property)
 
 ; Classes
 (class) @type
 
+(parent_class) @type
+
+(instance_method_name) @function.method
+
+(class_method_name) @function.method
+
 ; Literals
+(bool) @boolean
+
 (number) @number
-(pi_statement) @constant.builtin
-(float) @float
+
+(float) @number.float
 
 (string) @string
-(symbol) @string.special
+
+(escape_sequence) @string.escape
+
+(symbol) @string.special.symbol
+
+; Conditionals
+[
+  "?"
+  "!?"
+  "??"
+] @keyword.conditional
+
+((function_call
+  name: (_) @keyword.conditional)
+  (#any-of? @keyword.conditional "if" "while" "case" "switch" "try" "protect"))
+
+((function_call
+  name: (_) @keyword.repeat)
+  (#any-of? @keyword.repeat "for" "forBy"))
+
+; Duplication operator
+"!" @keyword.repeat
+
+; Arithmetic series operator
+".." @operator
 
 ; Operators
 [
-"&&"
-"||"
-"&"
-"|"
-"^"
-"=="
-"!="
-"<"
-"<="
-">"
-">="
-"<<"
-">>"
-"+"
-"-"
-"*"
-"/"
-"%"
-"="
-"|@|"
-"@@"
-"@|@"
+  "&&"
+  "||"
+  "&"
+  "|"
+  "^"
+  "=="
+  "!="
+  "==="
+  "!=="
+  "<"
+  "<="
+  ">"
+  ">="
+  "<<"
+  ">>"
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "="
+  "@"
+  "|@|"
+  "@@"
+  "@|@"
+  "++"
+  "+/+"
 ] @operator
-
 
 ; Keywords
 [
-"arg"
-"classvar"
-; "const"
-; "super"
-; "this"
-"var"
+  "arg"
+  "classvar"
+  "const"
+  "var"
 ] @keyword
+
+((local_var
+  name: (identifier) @variable.builtin)
+  (#any-of? @variable.builtin "this" "super"))
 
 ; Brackets
 [
@@ -94,11 +139,3 @@
   "."
   ","
 ] @punctuation.delimiter
-
-; control structure
-(control_structure) @conditional
-
-(escape_sequence) @string.special
-
-; SinOsc.ar()!2
-(duplicated_statement) @repeat
