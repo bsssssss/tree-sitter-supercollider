@@ -76,9 +76,6 @@
 ; Duplication operator
 "!" @keyword.repeat
 
-; Arithmetic series operator
-".." @operator
-
 ; Operators
 [
   "&&"
@@ -108,6 +105,7 @@
   "@|@"
   "++"
   "+/+"
+  ".."
 ] @operator
 
 ; Keywords
@@ -133,9 +131,10 @@
   "|"
 ] @punctuation.bracket
 
-; Delimeters
+; Delimiters
 [
   ";"
   "."
   ","
+  ":"
 ] @punctuation.delimiter
